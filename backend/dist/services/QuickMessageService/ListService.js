@@ -23,7 +23,8 @@ const ListService = async ({ searchParam = "", pageNumber = "1", companyId, user
     };
     whereCondition = {
         ...whereCondition,
-        companyId
+        companyId,
+        userId: userId
     };
     const limit = 20;
     const offset = limit * (+pageNumber - 1);
