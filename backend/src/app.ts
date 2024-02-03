@@ -21,11 +21,14 @@ app.set("queues", {
   messageQueue,
   sendScheduledMessages
 });
-
+const allowedDomains = [process.env.FRONTEND_URL, "http://localhost:3000"];
 app.use(
   cors({
-    credentials: true,
-    origin: process.env.FRONTEND_URL
+    origin: function (origin, callback) {
+      const allowed = allowedDomains.includes(origin);
+      callback(null, allowed);
+    },
+    credentials: true
   })
 );
 app.use(cookieParser());

@@ -45,9 +45,13 @@ app.set("queues", {
     messageQueue: queues_1.messageQueue,
     sendScheduledMessages: queues_1.sendScheduledMessages
 });
+const allowedDomains = [process.env.FRONTEND_URL, "http://localhost:3000"];
 app.use((0, cors_1.default)({
-    credentials: true,
-    origin: process.env.FRONTEND_URL
+    origin: function (origin, callback) {
+      const allowed = allowedDomains.includes(origin);
+      callback(null, allowed);
+    },
+    credentials: true
 }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());

@@ -1,0 +1,41 @@
+node_modules
+frontend/node_modules
+frontend/build
+frontend/*node_modules/*
+!public/.gitkeep
+frontend/.env
+frontend/.env.test
+
+/frontend/node_modules
+/frontend/node_modules/
+# production
+/frontend/build
+/frontend/build/
+
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/yarn-error.log
+
+/frontend/src/config/sentry.js
+
+# Ignore test-related files
+frontend/coverage.data
+frontend/coverage/
+
+
+backend/node_modules
+backend/public/*
+backend/dist
+backend/!public/.gitkeep
+backend/.env
+backend/.env.test
+
+backend/package-lock.json
+backend/yarn.lock
+backend/yarn-error.log
+
+backend/src/config/sentry.js
+
+# Ignore test-related files
+backend/coverage.data
+backend/coverage/
