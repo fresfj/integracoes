@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
     width: 88,
     color: '#FFF',
     marginRight: '5px',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    marginTop: 4
   }
 }))
 

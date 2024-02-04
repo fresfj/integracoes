@@ -1460,5 +1460,9 @@ module.exports = {
     'active',
     'disabled'
   ],
-  plugins: []
+  plugins: [
+    // Other third party and/or custom plugins
+    require('@tailwindcss/typography')({ modifiers: ['sm', 'lg'] }),
+    require('@tailwindcss/aspect-ratio')
+  ]
 }

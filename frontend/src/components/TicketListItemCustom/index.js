@@ -91,6 +91,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: 1,
     padding: 1,
     fontSize: 11,
+    marginTop: 4,
     whiteSpace: 'nowrap',
     width: 88
   },
@@ -458,7 +459,6 @@ const TicketListItemCustom = ({ ticket }) => {
                   <Tooltip title="Espiar Conversa">
                     <VisibilityIcon
                       onClick={() => setOpenTicketMessageDialog(true)}
-                      fontSize="small"
                       style={{
                         color: blue[700],
                         cursor: 'pointer',

@@ -2,10 +2,8 @@ import React, { useState, useContext } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import Button from '@material-ui/core/Button'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
 import Link from '@material-ui/core/Link'
-import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Paper from '@material-ui/core/Paper'
 
@@ -13,10 +11,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import Container from '@material-ui/core/Container'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { InferType } from 'yup'
 import * as yup from 'yup'
 import { Controller, useForm } from 'react-hook-form'
 import { i18n } from '../../translate/i18n'
@@ -25,7 +20,6 @@ import { AvatarGroup } from '@material-ui/lab'
 import { Avatar } from '@material-ui/core'
 
 import { AuthContext } from '../../context/Auth/AuthContext'
-import logo from '../../assets/logo.png'
 import { styled } from '@material-ui/styles'
 
 const Root = styled('div')(() => ({
@@ -42,12 +36,12 @@ const Root = styled('div')(() => ({
 const schema = yup.object().shape({
   email: yup
     .string()
-    .email('You must enter a valid email')
-    .required('You must enter a email'),
+    .email('Você deve inserir um e-mail válido.')
+    .required('Você deve inserir um e-mail.'),
   password: yup
     .string()
-    .required('Please enter your password.')
-    .min(4, 'Password is too short - must be at least 4 chars.'),
+    .required('Por favor, insira sua senha.')
+    .min(4, 'A senha é muito curto – deve ter pelo menos 4 caracteres.'),
   remember: yup.boolean()
 })
 
@@ -84,10 +78,10 @@ const Login = () => {
             <div className="flex min-w-0 flex-auto flex-col items-center sm:flex-row sm:justify-center md:items-start md:justify-start">
               <Paper className="h-full w-full px-16 py-8 ltr:border-r-1 rtl:border-l-1 sm:h-auto sm:w-auto sm:rounded-2xl sm:p-48 sm:shadow md:flex md:h-full md:w-1/2 md:items-center md:justify-end md:rounded-none md:p-64 md:shadow-none">
                 <div className="mx-auto w-full max-w-320 sm:mx-0 sm:w-320">
-                  <div className="items-center mb-48">
+                  <div className="items-center mb-32 mb-48">
                     <center>
                       <img
-                        className="w-120"
+                        className="w-96"
                         src="assets/images/logo/logo.svg"
                         alt="logo"
                       />
@@ -170,7 +164,7 @@ const Login = () => {
                       variant="contained"
                       color="secondary"
                       disabled={!isValid}
-                      className="w-full mt-8"
+                      className="w-full mt-8 text-sm"
                       aria-label="Register"
                       size="large"
                     >

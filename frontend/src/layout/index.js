@@ -49,6 +49,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     width: '100%',
     height: '100vh',
+    fontSize: '100%!important',
     [theme.breakpoints.down('sm')]: {
       height: 'calc(100vh - 56px)'
     },
@@ -187,7 +188,6 @@ const LoggedInLayout = ({ children, themeToggle }) => {
   const [drawerVariant, setDrawerVariant] = useState('permanent')
   // const [dueDate, setDueDate] = useState("");
   const { user } = useContext(AuthContext)
-
   const theme = useTheme()
   const { colorMode } = useContext(ColorModeContext)
   const greaterThenSm = useMediaQuery(theme.breakpoints.up('sm'))

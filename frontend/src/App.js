@@ -38,6 +38,13 @@ const App = () => {
   const violetMain = alpha(violetBase, 0.7)
   const theme = createTheme(
     {
+      overrides: {
+        MuiSvgIcon: {
+          root: {
+            fontSize: 26
+          }
+        }
+      },
       scrollbarStyles: {
         '&::-webkit-scrollbar': {
           width: '8px',
@@ -45,7 +52,7 @@ const App = () => {
         },
         '&::-webkit-scrollbar-thumb': {
           boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
-          backgroundColor: '#00BFFF'
+          backgroundColor: '#474396'
         }
       },
       scrollbarStylesSoft: {
@@ -54,6 +61,13 @@ const App = () => {
         },
         '&::-webkit-scrollbar-thumb': {
           backgroundColor: mode === 'light' ? '#F3F3F3' : '#333333'
+        }
+      },
+      typography: {
+        fontFamily: `Inter var, Roboto, Helvetica Neue, Arial, sans-serif`,
+        fontSize: 14,
+        allVariants: {
+          fontSize: 14
         }
       },
       palette: {
@@ -69,15 +83,15 @@ const App = () => {
           light: alpha(violetBase, 0.5),
           dark: alpha(violetBase, 0.9)
         },
-        primary: { main: '#00BFFF' },
-        textPrimary: mode === 'light' ? '#00BFFF' : '#FFFFFF',
-        borderPrimary: mode === 'light' ? '#00BFFF' : '#FFFFFF',
+        primary: { main: '#474396' },
+        textPrimary: mode === 'light' ? '#474396' : '#FFFFFF',
+        borderPrimary: mode === 'light' ? '#474396' : '#FFFFFF',
         dark: { main: mode === 'light' ? '#333333' : '#F3F3F3' },
         light: { main: mode === 'light' ? '#F3F3F3' : '#333333' },
         tabHeaderBackground: mode === 'light' ? '#EEE' : '#333',
         optionsBackground: mode === 'light' ? '#fafafa' : '#333',
         options: mode === 'light' ? '#fafafa' : '#666',
-        fontecor: mode === 'light' ? '#00BFFF' : '#fff',
+        fontecor: mode === 'light' ? '#474396' : '#fff',
         fancyBackground: mode === 'light' ? '#fafafa' : '#333',
         bordabox: mode === 'light' ? '#eee' : '#333',
         newmessagebox: mode === 'light' ? '#eee' : '#333',
@@ -94,7 +108,7 @@ const App = () => {
         inputBackground: mode === 'light' ? '#FFFFFF' : '#333',
         barraSuperior:
           mode === 'light'
-            ? 'linear-gradient(to right, #00BFFF, #0000FF, #00008B)'
+            ? 'linear-gradient(to right, #454394, #474396, #5956e9)'
             : '#666',
         boxticket: mode === 'light' ? '#EEE' : '#333',
         campaigntab: mode === 'light' ? '#ededed' : '#333'

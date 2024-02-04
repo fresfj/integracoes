@@ -159,7 +159,7 @@ const SignUp = () => {
                   <div className="items-center mb-48">
                     <center>
                       <img
-                        className="w-120"
+                        className="w-96"
                         src="assets/images/logo/logo.svg"
                         alt="logo"
                       />
@@ -291,7 +291,16 @@ const SignUp = () => {
                           error={!!errors.acceptTermsConditions}
                         >
                           <FormControlLabel
-                            label="I agree to the Terms of Service and Privacy Policy"
+                            label={
+                              <>
+                                {'Eu concordo com os '}
+                                <Link to={'/terms'}>Termos de Serviço</Link>
+                                {` e `}
+                                <Link to={'/privacy'}>
+                                  Política de Privacidade
+                                </Link>
+                              </>
+                            }
                             control={<Checkbox size="small" {...field} />}
                           />
                           <FormHelperText>
@@ -304,7 +313,7 @@ const SignUp = () => {
                     <Button
                       variant="contained"
                       color="secondary"
-                      className=" mt-24 w-full"
+                      className=" mt-24 w-full text-sm"
                       aria-label="Register"
                       disabled={!isValid}
                       type="submit"
